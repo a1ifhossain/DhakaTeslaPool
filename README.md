@@ -130,7 +130,7 @@ Prerequisites: Docker Desktop running on Windows.
 
    ```powershell
    Copy-Item .env.example .env
-
+   ```
    The example values work for a local demo; keep private secrets out of public repositories.
 
 2. Open PowerShell in the project folder and run:
