@@ -4,6 +4,9 @@ Dhaka Tesla Pool is a ride-pooling MVP built around an electric rickshaw-style v
 
 The seeded demo follows the brief's cast: Jashim is driver; Nusrat, Rafiq and Shirin are passengers.
 
+Live Project : https://dhaka-tesla-pool-9pkk.onrender.com/
+Project Video : https://drive.google.com/file/d/1qI1gZt58Yw1UsjgtEBeWRSWkJB65hIE0/view?usp=sharing
+
 ## Features
 
 - Passenger and driver account creation and sign-in. The form explains invalid email addresses, duplicate accounts and passwords shorter than 10 characters. Passwords can be shown or hidden.
