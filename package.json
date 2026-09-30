@@ -1,0 +1,20 @@
+{
+  "name": "dhaka-tesla-pool",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend run dev -- --host 0.0.0.0",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "db:migrate": "npm --prefix backend run db:migrate",
+    "db:seed": "npm --prefix backend run db:seed",
+    "format": "prettier --write \"backend/**/*.{js,ts,json}\" \"frontend/**/*.{js,jsx,css,json}\" \"docs/**/*.md\" \"README.md\" \"docker-compose.yml\" \"package.json\" \"package-lock.json\"",
+    "format:check": "prettier --check \"backend/**/*.{js,ts,json}\" \"frontend/**/*.{js,jsx,css,json}\" \"docs/**/*.md\" \"README.md\" \"docker-compose.yml\" \"package.json\" \"package-lock.json\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.9.9"
+  }
+}
