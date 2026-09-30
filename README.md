@@ -72,13 +72,53 @@ erDiagram
   RIDE_REQUESTS ||--o| POOL_MEMBERS : occupies
   RIDE_REQUESTS ||--o{ STATUS_EVENTS : records
   USERS ||--o{ STATUS_EVENTS : acts
-  USERS { uuid id PK; text name; text email UK; text role }
-  VEHICLES { uuid id PK; uuid driver_id FK; text name; int capacity }
-  POOLS { uuid id PK; uuid vehicle_id FK; text status; jsonb route_plan }
-  RIDE_REQUESTS { uuid id PK; uuid passenger_id FK; uuid pool_id FK; text pickup_zone; text destination_zone; int seats; int fare_paisa; int route_distance_m; text status }
-  POOL_MEMBERS { uuid pool_id FK; uuid ride_id FK; int seats }
-  STATUS_EVENTS { bigint id PK; uuid ride_id FK; uuid pool_id FK; text from_status; text to_status }
-```
+
+  USERS {
+    uuid id PK
+    text name
+    text email UK
+    text role
+  }
+
+  VEHICLES {
+    uuid id PK
+    uuid driver_id FK
+    text name
+    int capacity
+  }
+
+  POOLS {
+    uuid id PK
+    uuid vehicle_id FK
+    text status
+    jsonb route_plan
+  }
+
+  RIDE_REQUESTS {
+    uuid id PK
+    uuid passenger_id FK
+    uuid pool_id FK
+    text pickup_zone
+    text destination_zone
+    int seats
+    int fare_paisa
+    int route_distance_m
+    text status
+  }
+
+  POOL_MEMBERS {
+    uuid pool_id FK
+    uuid ride_id FK
+    int seats
+  }
+
+  STATUS_EVENTS {
+    bigint id PK
+    uuid ride_id FK
+    uuid pool_id FK
+    text from_status
+    text to_status
+  }
 
 PostgreSQL transactions and a vehicle-scoped advisory lock serialize ride-pool updates. Before a request joins, the API checks the route rule, request count, occupied seats and vehicle capacity. Driver actions advance both the pool and its member rides through `REQUESTED → MATCHED → DRIVER_ARRIVED → STARTED → COMPLETED`. Eligible passenger cancellations release their seats and are retained in ride history.
 
