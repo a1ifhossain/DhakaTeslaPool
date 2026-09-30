@@ -119,7 +119,7 @@ erDiagram
     text from_status
     text to_status
   }
-
+```
 PostgreSQL transactions and a vehicle-scoped advisory lock serialize ride-pool updates. Before a request joins, the API checks the route rule, request count, occupied seats and vehicle capacity. Driver actions advance both the pool and its member rides through `REQUESTED → MATCHED → DRIVER_ARRIVED → STARTED → COMPLETED`. Eligible passenger cancellations release their seats and are retained in ride history.
 
 ## Run locally with Docker Desktop
@@ -130,7 +130,6 @@ Prerequisites: Docker Desktop running on Windows.
 
    ```powershell
    Copy-Item .env.example .env
-   ```
 
    The example values work for a local demo; keep private secrets out of public repositories.
 
