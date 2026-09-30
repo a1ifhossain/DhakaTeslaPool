@@ -2,7 +2,7 @@
 
 Dhaka Tesla Pool is a ride-pooling MVP built around an electric rickshaw-style vehicle. Each vehicle has one driver seat and **two passenger seats**. Passengers can request a trip, see their own route, fare and status, and review trip history. Drivers can choose which compatible pool to accept and update it through its trip lifecycle.
 
-The seeded demo follows the brief's cast: Jashim drives Bullet; Nusrat, Rafiq and Shirin are passengers.
+The seeded demo follows the brief's cast: Jashim is driver; Nusrat, Rafiq and Shirin are passengers.
 
 ## Features
 
